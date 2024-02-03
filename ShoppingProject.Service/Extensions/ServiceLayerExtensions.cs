@@ -9,6 +9,7 @@ using ShoppingProject.Service.Services.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +19,11 @@ namespace ShoppingProject.Service.Extensions
     {
         public static IServiceCollection LoadServiceLayerExtension(this IServiceCollection services)
         {
+            var assembly = Assembly.GetExecutingAssembly();
+
             services.AddScoped<IProductService,ProductService>();
+
+            services.AddAutoMapper(assembly);
             
             return services;
         }

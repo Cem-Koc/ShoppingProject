@@ -1,4 +1,6 @@
-﻿using ShoppingProject.Data.UnitOfWorks;
+﻿using AutoMapper;
+using ShoppingProject.Data.UnitOfWorks;
+using ShoppingProject.Entity.DTOs.Products;
 using ShoppingProject.Entity.Entities;
 using ShoppingProject.Service.Services.Abstractions;
 using System;
@@ -12,14 +14,18 @@ namespace ShoppingProject.Service.Services.Concrete
 	public class ProductService : IProductService
 	{
 		private readonly IUnitOfWork _unitOfWork;
+		private readonly IMapper _mapper;
 
-		public ProductService(IUnitOfWork unitOfWork)
+		public ProductService(IUnitOfWork unitOfWork,IMapper mapper)
         {
 			_unitOfWork = unitOfWork;
+			_mapper = mapper;
 		}
-        public async Task<List<Product>> GetAllProductsAsync()
+        public async Task<List<ProductDto>> GetAllProductsAsync()
 		{
-			return await _unitOfWork.GetRepository<Product>().GetAllAsync();
+			var products = await _unitOfWork.GetRepository<Product>().GetAllAsync();
+			var map = _mapper.Map<List<ProductDto>>(products);
+			return map;
 		}
 	}
 }

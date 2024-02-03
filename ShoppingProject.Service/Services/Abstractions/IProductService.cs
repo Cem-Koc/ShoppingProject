@@ -1,4 +1,5 @@
-﻿using ShoppingProject.Entity.Entities;
+﻿using ShoppingProject.Entity.DTOs.Products;
+using ShoppingProject.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace ShoppingProject.Service.Services.Abstractions
 {
 	public interface IProductService
 	{
-		Task<List<Product>> GetAllProductsAsync();
+		Task<List<ProductDto>> GetAllProductsAsync();
 	}
 }

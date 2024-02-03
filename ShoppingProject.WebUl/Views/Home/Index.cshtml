@@ -1,4 +1,4 @@
-﻿@model List<Product>
+﻿@model List<ProductDto>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -13,6 +13,10 @@
 {
     <h1>@product.Name</h1> <br />
     <h3>@product.Description</h3>
+    <h3>@product.Price</h3>
+    <h3>@product.Quantity</h3>
+    <h3>@product.CreatedBy</h3>
+    <h3>@product.CreatedDate</h3>    
     <br />
     <br />
 }
