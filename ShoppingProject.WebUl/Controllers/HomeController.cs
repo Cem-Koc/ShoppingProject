@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShoppingProject.Service.Services.Abstractions;
 using ShoppingProject.WebUl.Models;
 using System.Diagnostics;
 
@@ -7,15 +8,18 @@ namespace ShoppingProject.WebUl.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
+		private readonly IProductService _productService;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(ILogger<HomeController> logger,IProductService productService)
 		{
 			_logger = logger;
+			_productService = productService;
 		}
 
-		public IActionResult Index()
+		public async Task<IActionResult> Index()
 		{
-			return View();
+			var products = await _productService.GetAllProductsAsync();
+			return View(products);
 		}
 
 		public IActionResult Privacy()
