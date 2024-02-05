@@ -182,8 +182,8 @@ namespace ShoppingProject.Data.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    UnitsInStock = table.Column<int>(type: "int", nullable: false),
+                    UnitPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -216,9 +216,9 @@ namespace ShoppingProject.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("03b2227f-9a29-4c66-a2a5-c4e7c62dba11"), "9048c07f-9807-4e71-9d87-65b156c3f175", "Admin", "ADMIN" },
-                    { new Guid("4c53cf2c-f856-4349-be2f-39e7525691c6"), "ee00e408-3b8c-4767-921b-635ea7f2181a", "Superadmin", "SUPERADMIN" },
-                    { new Guid("cf71ecaf-35e6-4735-8da3-97f2e86d682d"), "27306d7b-4d0d-4ade-93d0-7337d7a12027", "User", "USER" }
+                    { new Guid("03b2227f-9a29-4c66-a2a5-c4e7c62dba11"), "752863bf-8d0c-4317-aa84-252f4c518660", "Admin", "ADMIN" },
+                    { new Guid("4c53cf2c-f856-4349-be2f-39e7525691c6"), "5baab837-ea68-4d49-bf7c-939aace3a114", "Superadmin", "SUPERADMIN" },
+                    { new Guid("cf71ecaf-35e6-4735-8da3-97f2e86d682d"), "986ae05b-484d-483d-a358-6c9df5683cf0", "User", "USER" }
                 });
 
             migrationBuilder.InsertData(
@@ -226,8 +226,8 @@ namespace ShoppingProject.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { new Guid("681f79af-c484-4c9b-866c-6ca7d847d6a6"), 0, "e73b7fea-c4a1-4d14-8776-cab46727a678", "admin@gmail.com", false, "Admin", "User", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEOwFzsrVSCq69KMRQJNo6oeKwD2ubfItcmssbpAHRU+igUtzqVw52zcUkVrO7tzt0g==", "+905390000088", false, "13a7897f-2395-4665-89e0-29140a889808", false, "admin@gmail.com" },
-                    { new Guid("ae6a5c1f-ad83-4cce-bf53-0739d89d3799"), 0, "eb2c808a-82eb-47d4-b62c-ae063977881e", "superadmin@gmail.com", true, "Cem", "Koç", false, null, "SUPERADMIN@GMAIL.COM", "SUPERADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEExvjAmiVaGwHcEusBl6suGJt1fTIhMx68cnEw8qxtb5inW5yIv7LKrLWutOTna/ZQ==", "+905390000000", true, "1a0e72ac-018d-4018-92d5-839abbf723a1", false, "superadmin@gmail.com" }
+                    { new Guid("681f79af-c484-4c9b-866c-6ca7d847d6a6"), 0, "432153d1-b76d-4f51-8e12-38c4196b419d", "admin@gmail.com", false, "Admin", "User", false, null, "ADMIN@GMAIL.COM", "ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAEGcWu4sUIsMFsIC6SbHA1ur67Iq0XSU+1elaMh8PE89F3djblP6iQo+48myU2CwjBg==", "+905390000088", false, "6a9901d6-639d-467f-87da-928a927832c0", false, "admin@gmail.com" },
+                    { new Guid("ae6a5c1f-ad83-4cce-bf53-0739d89d3799"), 0, "310274a5-3f44-4f54-9843-4e050b363f4a", "superadmin@gmail.com", true, "Cem", "Koç", false, null, "SUPERADMIN@GMAIL.COM", "SUPERADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAECWCL7/cKKhUUUZ1K+8fN+56xij/cTf6C4YrLzOTCrQH9WllrSMQlX76e2Gl7vCWBw==", "+905390000000", true, "f5fd0166-c062-4e53-bcc0-07908b409330", false, "superadmin@gmail.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -235,8 +235,8 @@ namespace ShoppingProject.Data.Migrations
                 columns: new[] { "Id", "CreatedBy", "CreatedDate", "DeletedBy", "DeletedDate", "IsDeleted", "ModifiedBy", "ModifiedDate", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("9a99ad62-b618-4dca-a254-5843255ab008"), "Admin Test", new DateTime(2024, 2, 5, 15, 17, 34, 523, DateTimeKind.Local).AddTicks(4717), null, null, false, null, null, "Kazak" },
-                    { new Guid("9ec7d5a6-ee4a-4f21-885a-21a89e95559d"), "Admin Test", new DateTime(2024, 2, 5, 15, 17, 34, 523, DateTimeKind.Local).AddTicks(4720), null, null, false, null, null, "T-Shirt" }
+                    { new Guid("9a99ad62-b618-4dca-a254-5843255ab008"), "Admin Test", new DateTime(2024, 2, 5, 20, 33, 3, 192, DateTimeKind.Local).AddTicks(9776), null, null, false, null, null, "Kazak" },
+                    { new Guid("9ec7d5a6-ee4a-4f21-885a-21a89e95559d"), "Admin Test", new DateTime(2024, 2, 5, 20, 33, 3, 192, DateTimeKind.Local).AddTicks(9791), null, null, false, null, null, "T-Shirt" }
                 });
 
             migrationBuilder.InsertData(
@@ -250,11 +250,11 @@ namespace ShoppingProject.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "CategoryId", "CreatedBy", "CreatedDate", "DeletedBy", "DeletedDate", "Description", "IsDeleted", "ModifiedBy", "ModifiedDate", "Name", "Price", "Quantity", "UserId" },
+                columns: new[] { "Id", "CategoryId", "CreatedBy", "CreatedDate", "DeletedBy", "DeletedDate", "Description", "IsDeleted", "ModifiedBy", "ModifiedDate", "Name", "UnitPrice", "UnitsInStock", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("28eea08a-a878-4110-a7bb-d3aad544a705"), new Guid("9a99ad62-b618-4dca-a254-5843255ab008"), "Admin Test", new DateTime(2024, 2, 5, 15, 17, 34, 523, DateTimeKind.Local).AddTicks(4853), null, null, "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.", false, null, null, "Polo Yaka Kazak", 1500m, 200, new Guid("ae6a5c1f-ad83-4cce-bf53-0739d89d3799") },
-                    { new Guid("f66ffcad-9b07-41c8-907d-c37be37227e9"), new Guid("9ec7d5a6-ee4a-4f21-885a-21a89e95559d"), "Admin Test", new DateTime(2024, 2, 5, 15, 17, 34, 523, DateTimeKind.Local).AddTicks(4858), null, null, "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.", false, null, null, "Polo Yaka T-Shirt", 500m, 100, new Guid("681f79af-c484-4c9b-866c-6ca7d847d6a6") }
+                    { new Guid("597ee685-1b9f-499f-8d22-9294a2bd1474"), new Guid("9a99ad62-b618-4dca-a254-5843255ab008"), "Admin Test", new DateTime(2024, 2, 5, 20, 33, 3, 192, DateTimeKind.Local).AddTicks(9935), null, null, "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.", false, null, null, "Polo Yaka Kazak", 1500m, 200, new Guid("ae6a5c1f-ad83-4cce-bf53-0739d89d3799") },
+                    { new Guid("e5d80c57-98ed-421c-96b7-e229111da540"), new Guid("9ec7d5a6-ee4a-4f21-885a-21a89e95559d"), "Admin Test", new DateTime(2024, 2, 5, 20, 33, 3, 192, DateTimeKind.Local).AddTicks(9941), null, null, "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.", false, null, null, "Polo Yaka T-Shirt", 500m, 100, new Guid("681f79af-c484-4c9b-866c-6ca7d847d6a6") }
                 });
 
             migrationBuilder.CreateIndex(

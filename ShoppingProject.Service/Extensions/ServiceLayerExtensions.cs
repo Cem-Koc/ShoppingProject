@@ -22,6 +22,7 @@ namespace ShoppingProject.Service.Extensions
             var assembly = Assembly.GetExecutingAssembly();
 
             services.AddScoped<IProductService,ProductService>();
+            services.AddScoped<ICategoryService,CategoryService>();
 
             services.AddAutoMapper(assembly);
             

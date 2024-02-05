@@ -10,6 +10,7 @@ namespace ShoppingProject.Service.Services.Abstractions
 {
 	public interface IProductService
 	{
-		Task<List<ProductDto>> GetAllProductsAsync();
+		Task<List<ProductDto>> GetAllProductsWithCategoryNonDeletedAsync();
+		Task CreateProductAsync(ProductAddDto productAddDto);
 	}
 }

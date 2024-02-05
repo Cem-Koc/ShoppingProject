@@ -18,7 +18,7 @@ namespace ShoppingProject.WebUl.Controllers
 
 		public async Task<IActionResult> Index()
 		{
-			var products = await _productService.GetAllProductsAsync();
+			var products = await _productService.GetAllProductsWithCategoryNonDeletedAsync();
 			return View(products);
 		}
 

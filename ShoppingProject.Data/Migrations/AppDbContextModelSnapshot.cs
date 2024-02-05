@@ -53,21 +53,21 @@ namespace ShoppingProject.Data.Migrations
                         new
                         {
                             Id = new Guid("4c53cf2c-f856-4349-be2f-39e7525691c6"),
-                            ConcurrencyStamp = "ee00e408-3b8c-4767-921b-635ea7f2181a",
+                            ConcurrencyStamp = "5baab837-ea68-4d49-bf7c-939aace3a114",
                             Name = "Superadmin",
                             NormalizedName = "SUPERADMIN"
                         },
                         new
                         {
                             Id = new Guid("03b2227f-9a29-4c66-a2a5-c4e7c62dba11"),
-                            ConcurrencyStamp = "9048c07f-9807-4e71-9d87-65b156c3f175",
+                            ConcurrencyStamp = "752863bf-8d0c-4317-aa84-252f4c518660",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = new Guid("cf71ecaf-35e6-4735-8da3-97f2e86d682d"),
-                            ConcurrencyStamp = "27306d7b-4d0d-4ade-93d0-7337d7a12027",
+                            ConcurrencyStamp = "986ae05b-484d-483d-a358-6c9df5683cf0",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -175,7 +175,7 @@ namespace ShoppingProject.Data.Migrations
                         {
                             Id = new Guid("ae6a5c1f-ad83-4cce-bf53-0739d89d3799"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "eb2c808a-82eb-47d4-b62c-ae063977881e",
+                            ConcurrencyStamp = "310274a5-3f44-4f54-9843-4e050b363f4a",
                             Email = "superadmin@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Cem",
@@ -183,10 +183,10 @@ namespace ShoppingProject.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPERADMIN@GMAIL.COM",
                             NormalizedUserName = "SUPERADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEExvjAmiVaGwHcEusBl6suGJt1fTIhMx68cnEw8qxtb5inW5yIv7LKrLWutOTna/ZQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECWCL7/cKKhUUUZ1K+8fN+56xij/cTf6C4YrLzOTCrQH9WllrSMQlX76e2Gl7vCWBw==",
                             PhoneNumber = "+905390000000",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "1a0e72ac-018d-4018-92d5-839abbf723a1",
+                            SecurityStamp = "f5fd0166-c062-4e53-bcc0-07908b409330",
                             TwoFactorEnabled = false,
                             UserName = "superadmin@gmail.com"
                         },
@@ -194,7 +194,7 @@ namespace ShoppingProject.Data.Migrations
                         {
                             Id = new Guid("681f79af-c484-4c9b-866c-6ca7d847d6a6"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e73b7fea-c4a1-4d14-8776-cab46727a678",
+                            ConcurrencyStamp = "432153d1-b76d-4f51-8e12-38c4196b419d",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -202,10 +202,10 @@ namespace ShoppingProject.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAIL.COM",
                             NormalizedUserName = "ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOwFzsrVSCq69KMRQJNo6oeKwD2ubfItcmssbpAHRU+igUtzqVw52zcUkVrO7tzt0g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGcWu4sUIsMFsIC6SbHA1ur67Iq0XSU+1elaMh8PE89F3djblP6iQo+48myU2CwjBg==",
                             PhoneNumber = "+905390000088",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "13a7897f-2395-4665-89e0-29140a889808",
+                            SecurityStamp = "6a9901d6-639d-467f-87da-928a927832c0",
                             TwoFactorEnabled = false,
                             UserName = "admin@gmail.com"
                         });
@@ -345,7 +345,7 @@ namespace ShoppingProject.Data.Migrations
                         {
                             Id = new Guid("9a99ad62-b618-4dca-a254-5843255ab008"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2024, 2, 5, 15, 17, 34, 523, DateTimeKind.Local).AddTicks(4717),
+                            CreatedDate = new DateTime(2024, 2, 5, 20, 33, 3, 192, DateTimeKind.Local).AddTicks(9776),
                             IsDeleted = false,
                             Name = "Kazak"
                         },
@@ -353,7 +353,7 @@ namespace ShoppingProject.Data.Migrations
                         {
                             Id = new Guid("9ec7d5a6-ee4a-4f21-885a-21a89e95559d"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2024, 2, 5, 15, 17, 34, 523, DateTimeKind.Local).AddTicks(4720),
+                            CreatedDate = new DateTime(2024, 2, 5, 20, 33, 3, 192, DateTimeKind.Local).AddTicks(9791),
                             IsDeleted = false,
                             Name = "T-Shirt"
                         });
@@ -398,10 +398,10 @@ namespace ShoppingProject.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
+                    b.Property<decimal>("UnitPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Quantity")
+                    b.Property<int>("UnitsInStock")
                         .HasColumnType("int");
 
                     b.Property<Guid>("UserId")
@@ -418,28 +418,28 @@ namespace ShoppingProject.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("28eea08a-a878-4110-a7bb-d3aad544a705"),
+                            Id = new Guid("597ee685-1b9f-499f-8d22-9294a2bd1474"),
                             CategoryId = new Guid("9a99ad62-b618-4dca-a254-5843255ab008"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2024, 2, 5, 15, 17, 34, 523, DateTimeKind.Local).AddTicks(4853),
+                            CreatedDate = new DateTime(2024, 2, 5, 20, 33, 3, 192, DateTimeKind.Local).AddTicks(9935),
                             Description = "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
                             IsDeleted = false,
                             Name = "Polo Yaka Kazak",
-                            Price = 1500m,
-                            Quantity = 200,
+                            UnitPrice = 1500m,
+                            UnitsInStock = 200,
                             UserId = new Guid("ae6a5c1f-ad83-4cce-bf53-0739d89d3799")
                         },
                         new
                         {
-                            Id = new Guid("f66ffcad-9b07-41c8-907d-c37be37227e9"),
+                            Id = new Guid("e5d80c57-98ed-421c-96b7-e229111da540"),
                             CategoryId = new Guid("9ec7d5a6-ee4a-4f21-885a-21a89e95559d"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2024, 2, 5, 15, 17, 34, 523, DateTimeKind.Local).AddTicks(4858),
+                            CreatedDate = new DateTime(2024, 2, 5, 20, 33, 3, 192, DateTimeKind.Local).AddTicks(9941),
                             Description = "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
                             IsDeleted = false,
                             Name = "Polo Yaka T-Shirt",
-                            Price = 500m,
-                            Quantity = 100,
+                            UnitPrice = 500m,
+                            UnitsInStock = 100,
                             UserId = new Guid("681f79af-c484-4c9b-866c-6ca7d847d6a6")
                         });
                 });
