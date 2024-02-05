@@ -23,8 +23,9 @@ namespace ShoppingProject.Data.Mappings
 				CategoryId = Guid.Parse("9a99ad62-b618-4dca-a254-5843255ab008"),
 				CreatedBy = "Admin Test",
 				CreatedDate= DateTime.Now,
-				IsDeleted=false
-			},
+				IsDeleted=false,
+				UserId = Guid.Parse("ae6a5c1f-ad83-4cce-bf53-0739d89d3799")
+            },
 			new Product
 			{
 				Id = Guid.NewGuid(),
@@ -35,8 +36,9 @@ namespace ShoppingProject.Data.Mappings
 				CategoryId=Guid.Parse("9ec7d5a6-ee4a-4f21-885a-21a89e95559d"),
 				CreatedBy = "Admin Test",
 				CreatedDate = DateTime.Now,
-				IsDeleted = false
-			}	
+				IsDeleted = false,
+				UserId = Guid.Parse("681f79af-c484-4c9b-866c-6ca7d847d6a6")
+            }	
 			);
 		}
 	}
