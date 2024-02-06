@@ -12,5 +12,8 @@ namespace ShoppingProject.Service.Services.Abstractions
 	{
 		Task<List<ProductDto>> GetAllProductsWithCategoryNonDeletedAsync();
 		Task CreateProductAsync(ProductAddDto productAddDto);
+		Task<ProductDto> GetProductWithCategoryNonDeletedAsync(Guid productId);
+		Task<string> UpdateProductAsync(ProductUpdateDto productUpdateDto);
+		Task<string> SafeDeleteProductAsync(Guid productId);
 	}
 }
